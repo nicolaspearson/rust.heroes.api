@@ -9,7 +9,7 @@ services:
   postgres-hero:
     hostname: postgres-hero
     image: postgres:11
-    container_name: hero-postgres-central
+    container_name: hero-postgres
     expose:
       - 5432
     ports:
