@@ -13,8 +13,8 @@ pub struct Hero {
     pub identity: String,
     pub hometown: String,
     pub age: i32,
-    pub created_at: NaiveDateTime,
-    pub updated_at: NaiveDateTime,
+    pub created_at: Option<NaiveDateTime>,
+    pub updated_at: Option<NaiveDateTime>,
     pub deleted_at: Option<NaiveDateTime>
 }
 

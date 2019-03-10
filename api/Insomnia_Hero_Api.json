@@ -1,0 +1,159 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-03-10T15:11:02.466Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_38c674b2b91d438f8d9dd13591ecba54",
+			"created": 1552229648882,
+			"description": "",
+			"modified": 1552229648882,
+			"name": "Insomnia",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_bb97d6e58b484768bb78b272bbd4bdeb",
+			"color": null,
+			"created": 1552229648929,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1552229648929,
+			"modified": 1552230414356,
+			"name": "New Environment",
+			"parentId": "wrk_38c674b2b91d438f8d9dd13591ecba54",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_e383fdc4fb3b494d830266abe8810f5f",
+			"cookies": [],
+			"created": 1552229648932,
+			"modified": 1552229648932,
+			"name": "Default Jar",
+			"parentId": "wrk_38c674b2b91d438f8d9dd13591ecba54",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_224cbe2b98d540a59232440124078621",
+			"created": 1552230606229,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1552230606230,
+			"modified": 1552230606229,
+			"name": "Hero API",
+			"parentId": "wrk_38c674b2b91d438f8d9dd13591ecba54",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_43d1fbd2b8d84b3e93c2de2cbf81a780",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Iron Man\",\n \t\"identity\": \"Tony Stark\",\n\t\"hometown\": \"New York\",\n\t\"age\": 33\n}"
+			},
+			"created": 1552230127039,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_ca83dbf4994c48f295f79803760a0f62",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552230506963,
+			"method": "POST",
+			"modified": 1552230609577,
+			"name": "Create Hero",
+			"parameters": [],
+			"parentId": "fld_224cbe2b98d540a59232440124078621",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/hero",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f95256b7de2344c9aaa73a7e80bea0e1",
+			"authentication": {},
+			"body": {},
+			"created": 1552230464798,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1552230506913,
+			"method": "GET",
+			"modified": 1552230611295,
+			"name": "Get Heroes",
+			"parameters": [],
+			"parentId": "fld_224cbe2b98d540a59232440124078621",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/heroes",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0e1c6f54f2c74649839b57788dd72c40",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Iron Man\",\n \t\"identity\": \"Tony Stark\",\n\t\"hometown\": \"New York\",\n\t\"age\": 33\n}"
+			},
+			"created": 1552230496911,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c4262d074061444cbc0fba83ec6a5d49",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552230506863,
+			"method": "PUT",
+			"modified": 1552230613047,
+			"name": "Update Hero",
+			"parameters": [],
+			"parentId": "fld_224cbe2b98d540a59232440124078621",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/hero/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_217961991ca8437c976275a06a3b6d01",
+			"authentication": {},
+			"body": {},
+			"created": 1552230506863,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1552230506813,
+			"method": "DELETE",
+			"modified": 1552230614502,
+			"name": "Delete Hero",
+			"parameters": [],
+			"parentId": "fld_224cbe2b98d540a59232440124078621",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:8000/hero/1",
+			"_type": "request"
+		}
+	]
+}

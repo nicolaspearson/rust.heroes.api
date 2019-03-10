@@ -5,8 +5,8 @@ table! {
         identity -> Varchar,
         hometown -> Varchar,
         age -> Int4,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
+        created_at -> Nullable<Timestamptz>,
+        updated_at -> Nullable<Timestamptz>,
         deleted_at -> Nullable<Timestamptz>,
     }
 }
