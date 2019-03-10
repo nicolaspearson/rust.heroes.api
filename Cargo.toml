@@ -1,0 +1,7 @@
+[package]
+name = "hero-api"
+version = "0.1.0"
+authors = ["Nicolas Pearson <nic.s.pearson@gmail.com>"]
+edition = "2018"
+
+[dependencies]
