@@ -41,7 +41,7 @@ cargo build --release && cd target/release/
 sudo ROCKET_ENV=prod ./hero-api
 ```
 
-The app will start running at <http://localhost:80>
+The app will start running at <http://localhost:8000>
 
 ## Endpoints
 
