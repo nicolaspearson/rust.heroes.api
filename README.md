@@ -47,7 +47,7 @@ The app will start running at <http://localhost:8000>
 
 ## Endpoints
 
-The following endpoints are available
+The following endpoints are available:
 
 ```
 GET /heroes
@@ -63,4 +63,12 @@ PUT /hero/{heroId}
 
 ```
 DELETE /hero/{heroId}
+```
+
+## Benchmarking
+
+Run the following to benchmark request performance:
+
+```
+wrk -d1m http://localhost:8000/heroes
 ```
