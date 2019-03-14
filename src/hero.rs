@@ -5,7 +5,7 @@ use diesel::prelude::*;
 
 use chrono::NaiveDateTime;
 
-#[table_name = "hero"]
+#[table_name = "heroes"]
 #[derive(AsChangeset, Serialize, Deserialize, Queryable, Insertable)]
 pub struct Hero {
 	pub id: Option<i32>,
