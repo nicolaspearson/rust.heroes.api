@@ -2,3 +2,5 @@
 **/*.rs.bk
 
 /hero-db/data
+
+.DS_Store
