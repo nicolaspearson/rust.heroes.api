@@ -19,6 +19,17 @@ pub struct Hero {
 }
 
 impl Hero {
+	pub fn get(id: i32, connection: &PgConnection) -> Hero {
+		return hero::table.find(id).first(connection).unwrap();
+	}
+
+	pub fn get_all(connection: &PgConnection) -> Vec<Hero> {
+		hero::table
+			.order(hero::id)
+			.load::<Hero>(connection)
+			.unwrap()
+	}
+
 	pub fn create(hero_item: Hero, connection: &PgConnection) -> Hero {
 		diesel::insert_into(hero::table)
 			.values(&hero_item)
@@ -29,13 +40,6 @@ impl Hero {
 			.order(hero::id.desc())
 			.first(connection)
 			.unwrap();
-	}
-
-	pub fn read(connection: &PgConnection) -> Vec<Hero> {
-		hero::table
-			.order(hero::id)
-			.load::<Hero>(connection)
-			.unwrap()
 	}
 
 	pub fn update(id: i32, hero_item: Hero, connection: &PgConnection) -> bool {

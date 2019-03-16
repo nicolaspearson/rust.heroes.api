@@ -18,8 +18,18 @@ pub mod schema;
 
 use hero::Hero;
 
+#[get("/?<id>")]
+fn get_hero(id: i32, connection: db::Connection) -> Json<JsonValue> {
+	Json(json!(Hero::get(id, &connection)))
+}
+
+#[get("/")]
+fn get_heroes(connection: db::Connection) -> Json<JsonValue> {
+	Json(json!(Hero::get_all(&connection)))
+}
+
 #[post("/", data = "<hero>")]
-fn create(hero: Json<Hero>, connection: db::Connection) -> Json<Hero> {
+fn create_hero(hero: Json<Hero>, connection: db::Connection) -> Json<Hero> {
 	let insert = Hero {
 		id: None,
 		..hero.into_inner()
@@ -27,13 +37,8 @@ fn create(hero: Json<Hero>, connection: db::Connection) -> Json<Hero> {
 	Json(Hero::create(insert, &connection))
 }
 
-#[get("/")]
-fn read(connection: db::Connection) -> Json<JsonValue> {
-	Json(json!(Hero::read(&connection)))
-}
-
 #[put("/<id>", data = "<hero>")]
-fn update(id: i32, hero: Json<Hero>, connection: db::Connection) -> Json<JsonValue> {
+fn update_hero(id: i32, hero: Json<Hero>, connection: db::Connection) -> Json<JsonValue> {
 	let update = Hero {
 		id: Some(id),
 		..hero.into_inner()
@@ -42,7 +47,7 @@ fn update(id: i32, hero: Json<Hero>, connection: db::Connection) -> Json<JsonVal
 }
 
 #[delete("/<id>")]
-fn delete(id: i32, connection: db::Connection) -> Json<JsonValue> {
+fn delete_hero(id: i32, connection: db::Connection) -> Json<JsonValue> {
 	Json(json!({ "success": Hero::delete(id, &connection) }))
 }
 
@@ -50,8 +55,11 @@ fn main() {
 	dotenv::dotenv().expect("Failed to read .env file");
 
 	rocket::ignite()
-		.mount("/hero", routes![create, update, delete])
-		.mount("/heroes", routes![read])
+		.mount(
+			"/hero",
+			routes![get_hero, create_hero, update_hero, delete_hero],
+		)
+		.mount("/heroes", routes![get_heroes])
 		.manage(db::connect())
 		.launch();
 }

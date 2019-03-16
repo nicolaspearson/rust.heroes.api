@@ -1,6 +1,6 @@
 # Rust Heroes API
 
-An example REST API built using Rust and PostgreSQL.
+A simple REST API that provides CRUD operations on a `hero` object, it was built using Rust and PostgreSQL.
 
 ## Dependencies
 
@@ -48,6 +48,10 @@ The app will start running at <http://localhost:8000>
 ## Endpoints
 
 The following endpoints are available:
+
+```
+GET /hero?id={heroId}
+```
 
 ```
 GET /heroes
